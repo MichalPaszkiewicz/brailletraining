@@ -56,12 +56,14 @@ var btModule = angular.module('app', []).
 					return 10;
 				case 2:
 					return 20;
-				case 3:
+				default:
 					return bCharTable.length;
 			}
 		}
 		
 		var generateBChars = function(){
+			$scope.bChars = [];
+			$scope.xChars = [];
 			for(var i = 0; i < $scope.levelCharNums(); i++){
 				var tempBChar = new brailleChar(bCharTable[i]);
 				var tempXChar = new brailleChar(bCharTable[i], true);
@@ -74,9 +76,21 @@ var btModule = angular.module('app', []).
 		
 		$scope.currentIndex = 0;
 		
-		$scope.keyEvent = function($event){
-			var tempKey = String.fromCharCode($event.keyCode).toLowerCase();
+		$scope.nextLevel = function(){
+			$scope.level++;
+			generateBChars();
+		}
+		
+		$scope.score = 0;
+		
+		$scope.checkCorrect = function(tempKey){
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
+				$scope.score++;
+				
+				if($scope.score == 10){
+					$scope.nextLevel();
+				}
+				
 				$scope.bChars[$scope.currentIndex].success = true;
 				$scope.currentIndex++;
 				
@@ -85,6 +99,11 @@ var btModule = angular.module('app', []).
 				$scope.bChars.push(tempBChar);
 				window.scrollTo(0,document.body.scrollHeight);
 			}
+		}
+		
+		$scope.keyEvent = function($event){
+			var tempKey = String.fromCharCode($event.keyCode).toLowerCase();
+			$scope.checkCorrect(tempKey);
 		}
 	
 	});
