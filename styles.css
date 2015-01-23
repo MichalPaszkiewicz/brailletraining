@@ -5,6 +5,12 @@ html, body{
 	width: 100%;
 }
 
+#fork-button{
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
 #main-container{
 	max-width: 630px;
 	margin: auto;
@@ -63,4 +69,10 @@ html, body{
 	
 	/* W3C Markup, IE10 Release Preview */ 
 	background-image: radial-gradient(circle closest-side at center, #000000 0%, #FFFFFF 55%);
+}
+
+x-holder{
+	background: white;
+	z-index: 100;
+	box-shadow: black 0 10px 38px 0px;
 }
