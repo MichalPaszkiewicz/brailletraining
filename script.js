@@ -106,7 +106,7 @@ var btModule = angular.module('app', []).
 		$scope.timePassed = 0;
 		$scope.unitTimePassed = 0;
 		
-		$scope.timeAllowed = 100;
+		$scope.timeAllowed = 500;
 		$scope.timerOn = false;
 		
 		$scope.setTimePassed = function(){
@@ -122,14 +122,14 @@ var btModule = angular.module('app', []).
 		$scope.updateTime = function(){
 			$scope.unitTimePassed++;
 			$scope.setTimePassed();
-			if($scope.unitTimePassed >= 100){
+			if($scope.unitTimePassed >= 500){
 				$scope.loseGame();
 			}
 			
 			if($scope.timerOn){
 				$timeout(function(){
 					$scope.updateTime();
-				}, 100);
+				}, 20);
 			}
 		}
 		
