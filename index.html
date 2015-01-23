@@ -16,9 +16,11 @@
 	<body ng-keydown="keyEvent($event)">
 		<div id="main-container">
 			<div class="b-char" ng-repeat="bChar in bChars">
+				<div class="b-char-cover" ng-class="{'green': bChar.success}"></div>
 				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.one}"></span><span class="b-dot" ng-class="{'dark': bChar.two}"></span></div>
 				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.three}"></span><span class="b-dot" ng-class="{'dark': bChar.four}"></span></div>
 				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.five}"></span><span class="b-dot" ng-class="{'dark': bChar.six}"></span></div>
+				<div class="b-char-letter" ng-show="bChar.success">{{bChar.name}}</div>
 			</div>
 			
 			<div id="footer-push"></div>	
