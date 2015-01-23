@@ -122,7 +122,7 @@ var btModule = angular.module('app', []).
 		$scope.updateTime = function(){
 			$scope.unitTimePassed++;
 			$scope.setTimePassed();
-			if($scope.unitTimePass == 100){
+			if($scope.unitTimePassed >= 100){
 				$scope.loseGame();
 			}
 			
@@ -142,6 +142,8 @@ var btModule = angular.module('app', []).
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
 				$scope.setTopScore($scope.score);
+				$scope.unitTimePassed = 0;
+				$scope.setTimePassed();
 				if($scope.level < 3 && $scope.score == 100){
 					$scope.nextLevel();
 					$scope.currentIndex = 0;
