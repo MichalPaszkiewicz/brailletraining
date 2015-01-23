@@ -31,7 +31,7 @@ var btModule = angular.module('app', []).
 			{n: "w", i: [0,1,1,1,0,1]}
 		];
 		
-		function bChar(item){
+		function brailleChar(item){
 			this.one = item.i[0] == 1;
 			this.two = item.i[1] == 1;
 			this.three = item.i[2] == 1;
@@ -44,7 +44,7 @@ var btModule = angular.module('app', []).
 		
 		var generateBChars = function(){
 			for(var i = 0; i < bCharTable.length; i++){
-				var tempBChar = new bChar(bCharTable[i]);
+				var tempBChar = new brailleChar(bCharTable[i]);
 				$scope.bChars.push(tempBChar);
 			}
 		}
