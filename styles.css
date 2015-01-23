@@ -24,6 +24,15 @@ html, body{
 #main-container{
 	max-width: 630px;
 	margin: auto;
+	min-height: 100%;
+}
+
+footer, #footer-push{
+	height: 60px;
+}
+
+footer{
+	margin-top: -60px;
 }
 
 .b-char{
