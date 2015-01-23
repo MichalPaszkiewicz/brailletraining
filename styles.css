@@ -42,6 +42,8 @@ h1{
 
 p{
 	font-family: monospace;
+	text-align: center;
+	margin-bottom: 0;
 }
 
 .b-char-cover{
@@ -87,4 +89,8 @@ p{
 	box-shadow: black 0 10px 38px 0px;
 	width: 100%;
 	max-width: 630px;
+}
+
+#x-holder .b-char{
+	cursor: pointer;
 }
