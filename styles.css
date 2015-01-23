@@ -24,7 +24,7 @@ html, body{
 	
 }
 
-.b-char-letter{
+.b-char-letter, h1{
 	text-align: center;
 }
 
