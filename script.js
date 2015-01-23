@@ -64,7 +64,7 @@ var btModule = angular.module('app', []).
 		var generateBChars = function(){
 			$scope.bChars = [];
 			$scope.xChars = [];
-			for(var i = 0; i < $scope.levelCharNums(); i++){
+			for(var i = 0; i < 10; i++){
 				var tempBChar = new brailleChar(bCharTable[i]);
 				var tempXChar = new brailleChar(bCharTable[i], true);
 				$scope.bChars.push(tempBChar);
