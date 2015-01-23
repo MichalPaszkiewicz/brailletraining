@@ -61,14 +61,21 @@ var btModule = angular.module('app', []).
 			}
 		}
 		
+		$scope.addRandomChar = function(){
+			var rand = Math.floor(Math.random() * $scope.levelCharNums());
+			tempBChar = new brailleChar(bCharTable[rand]);
+			$scope.bChars.push(tempBChar);
+		}
+		
 		var generateBChars = function(){
 			$scope.bChars = [];
 			$scope.xChars = [];
-			for(var i = 0; i < 10; i++){
-				var tempBChar = new brailleChar(bCharTable[i]);
+			for(var i = 0; i < $scope.levelCharNum(); i++){
 				var tempXChar = new brailleChar(bCharTable[i], true);
-				$scope.bChars.push(tempBChar);
 				$scope.xChars.push(tempXChar);
+			}
+			for(var i = 0; i < 10; i++){
+				$scope.addRandomChar();
 			}
 		}
 		
@@ -95,10 +102,7 @@ var btModule = angular.module('app', []).
 				else{
 					$scope.bChars[$scope.currentIndex].success = true;
 					$scope.currentIndex++;
-					
-					var rand = Math.floor(Math.random() * $scope.levelCharNums());
-					var tempBChar = new brailleChar(bCharTable[rand]);
-					$scope.bChars.push(tempBChar);
+					$scope.addRandomChar();
 					window.scrollTo(0,document.body.scrollHeight);
 				}
 			}
