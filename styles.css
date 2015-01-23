@@ -11,6 +11,16 @@ html, body{
 	top: 0;
 }
 
+#level{
+	position: absolute;
+	left: 10px;
+}
+
+#score{
+	position: absolute;
+	right: 10px;
+}
+
 #main-container{
 	max-width: 630px;
 	margin: auto;
