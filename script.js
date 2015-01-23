@@ -43,8 +43,21 @@ var btModule = angular.module('app', []).
 			return this;
 		}
 		
+		$scope.level = 1;
+		
+		$scope.levelCharNums = function(){
+			switch($scope.level){
+				case 1:
+					return 10;
+				case 2:
+					return 20;
+				case 3:
+					return bCharTable.length;
+			}
+		}
+		
 		var generateBChars = function(){
-			for(var i = 0; i < bCharTable.length; i++){
+			for(var i = 0; i < $scope.levelCharNums(); i++){
 				var tempBChar = new brailleChar(bCharTable[i]);
 				$scope.bChars.push(tempBChar);
 			}
@@ -60,7 +73,7 @@ var btModule = angular.module('app', []).
 				$scope.bChars[$scope.currentIndex].success = true;
 				$scope.currentIndex++;
 				
-				var rand = Math.floor(Math.random() * bCharTable.length);
+				var rand = Math.floor(Math.random() * $scope.levelCharNums());
 				var tempBChar = new brailleChar(bCharTable[rand]);
 				$scope.bChars.push(tempBChar);
 				window.scrollTo(0,document.body.scrollHeight);
