@@ -118,6 +118,7 @@ var btModule = angular.module('app', []).
 			$scope.currentIndex = 0;
 			$scope.score = 0;
 			generateBChars();
+			$scope.unitTimePassed = 0;
 		}
 		
 		$scope.updateTime = function(){
