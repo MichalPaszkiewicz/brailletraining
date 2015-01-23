@@ -87,6 +87,7 @@ var btModule = angular.module('app', []).
 			$scope.level++;
 			localStorage.setItem("brailletraining-level", $scope.level);
 			generateBChars();
+			$scope.timeAllowed = 500;
 		}
 		
 		$scope.topScore = localStorage.getItem("brailletraining-topscore") == null ? 0 : localStorage.getItem("brailletraining-topscore");
@@ -119,6 +120,7 @@ var btModule = angular.module('app', []).
 			$scope.score = 0;
 			generateBChars();
 			$scope.unitTimePassed = 0;
+			$scope.timeAllowed = 500;
 		}
 		
 		$scope.updateTime = function(){
@@ -143,6 +145,7 @@ var btModule = angular.module('app', []).
 			
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
+				$scope.timeAllowed--;
 				$scope.setTopScore($scope.score);
 				$scope.unitTimePassed = 0;
 				$scope.setTimePassed();
