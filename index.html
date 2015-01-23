@@ -13,6 +13,7 @@
 		 	ga('send', 'pageview');
 		 </script>
 	</head> 
+	<body ng-keydown="keyEvent($event)">
 		<div id="main-container">
 			<div class="b-char" ng-repeat="bChar in bChars">
 				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.one}"></span><span class="b-dot" ng-class="{'dark': bChar.two}"></span></div>
@@ -23,7 +24,5 @@
 			<div id="footer-push"></div>	
 		</div>
 		<footer></footer>
-	
-	<body>
 	</body>
 </html>
