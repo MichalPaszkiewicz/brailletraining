@@ -28,7 +28,7 @@
 					<div class="b-char-letter" ng-show="bChar.success">{{bChar.name}}</div>
 				</div>
 			</div>
-			<div style="width: 100%" ng-style="document.getElementById('x-holder').clientHeight"></div>
+			<div style="width: 100%" ng-style="getHeight()"></div>
 			
 			<div id="b-holder">
 				<div class="b-char" ng-repeat="bChar in bChars">
