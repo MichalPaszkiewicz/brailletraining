@@ -16,6 +16,7 @@ html, body{
 	margin: 10px;
 	box-shadow: 0 0 4px rgb(244, 244, 244);
 	position: relative;
+	vertical-align: top;
 }
 
 .b-char-row{
