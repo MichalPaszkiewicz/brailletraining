@@ -71,7 +71,7 @@ html, body{
 	background-image: radial-gradient(circle closest-side at center, #000000 0%, #FFFFFF 55%);
 }
 
-x-holder{
+#x-holder{
 	background: white;
 	z-index: 100;
 	box-shadow: black 0 10px 38px 0px;
