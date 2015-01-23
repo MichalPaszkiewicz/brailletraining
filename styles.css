@@ -75,4 +75,6 @@ html, body{
 	background: white;
 	z-index: 100;
 	box-shadow: black 0 10px 38px 0px;
+	width: 100%;
+	max-width: 630px;
 }
