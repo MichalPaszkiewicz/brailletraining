@@ -48,7 +48,7 @@ var btModule = angular.module('app', []).
 			return this;
 		}
 		
-		$scope.level = 1;
+		$scope.level = localStorage.getItem("brailletraining-level") == null ? 1 : localStorage.getItem("brailletraining-level");
 		
 		$scope.levelCharNums = function(){
 			switch($scope.level){
@@ -85,6 +85,7 @@ var btModule = angular.module('app', []).
 		
 		$scope.nextLevel = function(){
 			$scope.level++;
+			localStorage.setItem("brailletraining-level", $scope.level);
 			generateBChars();
 		}
 		
