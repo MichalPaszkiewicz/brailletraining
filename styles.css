@@ -19,6 +19,13 @@ html, body{
 #score{
 	position: absolute;
 	right: 10px;
+	top: 30px;
+}
+
+#top-score{
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }
 
 #main-container{
