@@ -1,5 +1,6 @@
 var btModule = angular.module('app', []).
 	controller("btControl", function btControl($scope, $timeout){
+		$scope.xChars = [];
 		$scope.bChars = [];
 		
 		var bCharTable = [
@@ -60,6 +61,7 @@ var btModule = angular.module('app', []).
 			for(var i = 0; i < $scope.levelCharNums(); i++){
 				var tempBChar = new brailleChar(bCharTable[i]);
 				$scope.bChars.push(tempBChar);
+				$scope.xChars.push(tempBChar);
 			}
 		}
 		
