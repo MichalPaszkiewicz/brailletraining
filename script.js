@@ -88,12 +88,24 @@ var btModule = angular.module('app', []).
 			generateBChars();
 		}
 		
+		$scope.topScore = localStorage.getItem("brailletraining-topscore") ?? 0;
+
+		$scope.setTopScore = function(newValue){
+			var value = $scope.topScore;
+			if(newValue != null && newValue != undefined){
+				if(newValue > value){
+					$scope.topScore = newValue;
+					localStorage.setItem("brailletraining-topscore", newValue);
+				}
+			}
+		}
+		
 		$scope.score = 0;
 		
 		$scope.checkCorrect = function(tempKey){
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
-				
+				$scope.setTopScore($scope.score);
 				if($scope.level < 3 && $scope.score == 100){
 					$scope.nextLevel();
 					$scope.currentIndex = 0;
