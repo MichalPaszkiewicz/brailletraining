@@ -20,7 +20,7 @@
 		<div id="main-container">
 			<div style="position:fixed" id="x-holder">
 				<h1>Braille Trainer</h1>
-				<p>Play by typing or clicking the letters in this box</p>
+				<p>Play by typing or clicking the letters in this box.</p>
 				<div class="b-char" ng-repeat="bChar in xChars" ng-click="checkCorrect(bChar.name)">
 					<div class="b-char-cover" ng-class="{'green': bChar.success}"></div>
 					<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.one}"></span><span class="b-dot" ng-class="{'dark': bChar.two}"></span></div>
