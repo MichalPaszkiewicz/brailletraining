@@ -145,7 +145,7 @@ var btModule = angular.module('app', []).
 			
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
-				$scope.timeAllowed--;
+				$scope.timeAllowed -= 2;
 				$scope.setTopScore($scope.score);
 				$scope.unitTimePassed = 0;
 				$scope.setTimePassed();
