@@ -34,6 +34,12 @@ html, body{
 	text-align: center;
 }
 
+h1{
+	margin: 0;
+	font-family: monospace;
+	letter-spacing: 6px;
+}
+
 .b-char-cover{
 	height: 80px;
 	width: 40px;
