@@ -39,6 +39,7 @@ var btModule = angular.module('app', []).
 			this.five = item.i[4] == 1;
 			this.six = item.i[5] == 1;
 			this.name = item.n;
+			this.success = false;
 			return this;
 		}
 		
@@ -50,4 +51,14 @@ var btModule = angular.module('app', []).
 		}
 		
 		generateBChars();
+		
+		$scope.currentIndex = 0;
+		
+		$scope.keyEvent = function($event){
+			var tempKey = String.fromCharCode($event.keyCode);
+			if($scope.bChars[$scope.currentIndex].name == tempKey){
+				$scope.bChars[$scope.currentIndex].success = true;
+				$scope.currentIndex++;
+			}
+		}
 	});
