@@ -13,6 +13,17 @@
 		 	ga('send', 'pageview');
 		 </script>
 	</head> 
+		<div id="main-container">
+			<div class="b-char" ng-repeat="bChar in bChars">
+				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.one}"></span><span class="b-dot" ng-class="{'dark': bChar.two}"></span></div>
+				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.three}"></span><span class="b-dot" ng-class="{'dark': bChar.four}"></span></div>
+				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.five}"></span><span class="b-dot" ng-class="{'dark': bChar.six}"></span></div>
+			</div>
+			
+			<div id="footer-push"></div>	
+		</div>
+		<footer></footer>
+	
 	<body>
 	</body>
 </html>
