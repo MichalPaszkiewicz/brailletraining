@@ -92,14 +92,15 @@ var btModule = angular.module('app', []).
 					$scope.currentIndex = 0;
 					$scope.score = 0;
 				}
-				
-				$scope.bChars[$scope.currentIndex].success = true;
-				$scope.currentIndex++;
-				
-				var rand = Math.floor(Math.random() * $scope.levelCharNums());
-				var tempBChar = new brailleChar(bCharTable[rand]);
-				$scope.bChars.push(tempBChar);
-				window.scrollTo(0,document.body.scrollHeight);
+				else{
+					$scope.bChars[$scope.currentIndex].success = true;
+					$scope.currentIndex++;
+					
+					var rand = Math.floor(Math.random() * $scope.levelCharNums());
+					var tempBChar = new brailleChar(bCharTable[rand]);
+					$scope.bChars.push(tempBChar);
+					window.scrollTo(0,document.body.scrollHeight);
+				}
 			}
 		}
 		
