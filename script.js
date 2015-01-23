@@ -94,7 +94,7 @@ var btModule = angular.module('app', []).
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
 				
-				if($scope.score == 10){
+				if($scope.level < 3 && $scope.score == 10){
 					$scope.nextLevel();
 					$scope.currentIndex = 0;
 					$scope.score = 0;
