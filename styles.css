@@ -8,13 +8,29 @@ html, body{
 .b-char{
 	display:inline-block;
 	width: 40px;
-	height: 60px;
+	height: 80px;
 	margin: 10px;
 	box-shadow: 0 0 4px rgb(244, 244, 244);
+	position: relative;
 }
 
 .b-char-row{
 	
+}
+
+.b-char-letter{
+	text-align: center;
+}
+
+.b-char-cover{
+	height: 80px;
+	width: 40px;
+	position: absolute;
+}
+
+.green{
+	background: green;
+	opacity: 0.1;
 }
 
 .b-dot{
