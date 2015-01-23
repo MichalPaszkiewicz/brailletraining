@@ -126,7 +126,7 @@ var btModule = angular.module('app', []).
 		$scope.updateTime = function(){
 			$scope.unitTimePassed++;
 			$scope.setTimePassed();
-			if($scope.unitTimePassed >= $scope.unitTimePassed){
+			if($scope.unitTimePassed >= $scope.timeAllowed){
 				$scope.loseGame();
 			}
 			
