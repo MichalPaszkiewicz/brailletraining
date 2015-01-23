@@ -63,6 +63,8 @@ var btModule = angular.module('app', []).
 				var rand = Math.floor(Math.random() * bCharTable.length);
 				var tempBChar = new brailleChar(bCharTable[rand]);
 				$scope.bChars.push(tempBChar);
+				window.scrollTo(0,document.body.scrollHeight);
 			}
 		}
+	
 	});
