@@ -88,7 +88,7 @@ var btModule = angular.module('app', []).
 			generateBChars();
 		}
 		
-		$scope.topScore = localStorage.getItem("brailletraining-topscore") ?? 0;
+		$scope.topScore = localStorage.getItem("brailletraining-topscore") == null ? 0 : localStorage.getItem("brailletraining-topscore");
 
 		$scope.setTopScore = function(newValue){
 			var value = $scope.topScore;
