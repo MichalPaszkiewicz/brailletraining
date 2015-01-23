@@ -25,10 +25,10 @@ var btModule = angular.module('app', []).
 			{n: "t", i: [0,1,1,1,1]},
 			{n: "u", i: [1,0,0,0,1,1]},
 			{n: "v", i: [1,0,1,0,1,1]},
+			{n: "w", i: [0,1,1,1,0,1]},
 			{n: "x", i: [1,1,0,0,1,1]},
 			{n: "y", i: [1,1,0,1,1,1]},
-			{n: "z", i: [1,0,0,1,1,1]},
-			{n: "w", i: [0,1,1,1,0,1]}
+			{n: "z", i: [1,0,0,1,1,1]}
 		];
 		
 		function brailleChar(item){
@@ -59,6 +59,10 @@ var btModule = angular.module('app', []).
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.bChars[$scope.currentIndex].success = true;
 				$scope.currentIndex++;
+				
+				var rand = Math.floor(Math.random() * bCharTable.length);
+				var tempBChar = new brailleChar(bCharTable[rand]);
+				$scope.bChars.push(tempBChar);
 			}
 		}
 	});
