@@ -40,6 +40,10 @@ h1{
 	letter-spacing: 6px;
 }
 
+p{
+	font-family: monospace;
+}
+
 .b-char-cover{
 	height: 80px;
 	width: 40px;
