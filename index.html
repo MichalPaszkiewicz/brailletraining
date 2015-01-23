@@ -15,6 +15,7 @@
 	</head> 
 	<body ng-keydown="keyEvent($event)">
 		<div id="main-container">
+			<h1>Braille Trainer</h1>
 			<div class="b-char" ng-repeat="bChar in bChars">
 				<div class="b-char-cover" ng-class="{'green': bChar.success}"></div>
 				<div class="b-char-row"><span class="b-dot" ng-class="{'dark': bChar.one}"></span><span class="b-dot" ng-class="{'dark': bChar.two}"></span></div>
