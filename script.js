@@ -51,7 +51,7 @@ var btModule = angular.module('app', []).
 		$scope.level = localStorage.getItem("brailletraining-level") == null ? 1 : localStorage.getItem("brailletraining-level");
 		
 		$scope.levelCharNums = function(){
-			switch($scope.level){
+			switch(parseInt($scope.level)){
 				case 1:
 					return 10;
 				case 2:
