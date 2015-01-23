@@ -55,7 +55,7 @@ var btModule = angular.module('app', []).
 		$scope.currentIndex = 0;
 		
 		$scope.keyEvent = function($event){
-			var tempKey = String.fromCharCode($event.keyCode);
+			var tempKey = String.fromCharCode($event.keyCode).toLowerCase();
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.bChars[$scope.currentIndex].success = true;
 				$scope.currentIndex++;
