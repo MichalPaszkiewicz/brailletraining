@@ -5,6 +5,10 @@ html, body{
 	width: 100%;
 }
 
+#main-container{
+	max-width: 630px;
+}
+
 .b-char{
 	display:inline-block;
 	width: 40px;
