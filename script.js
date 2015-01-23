@@ -104,8 +104,41 @@ var btModule = angular.module('app', []).
 		$scope.score = 0;
 		
 		$scope.timePassed = 0;
+		$scope.unitTimePassed = 0;
+		
+		$scope.timeAllowed = 100;
+		$scope.timerOn = false;
+		
+		$scope.setTimePassed = function(){
+			$scope.timePassed = $scope.unitTimePassed * document.getElementById('health-left').clientWidth / $scope.timeAllowed;
+		}
+		
+		$scope.loseGame = function(){
+			$scope.timerOn = false;
+			$scope.currentIndex = 0;
+			$scope.score = 0;
+		}
+		
+		$scope.updateTime = function(){
+			$scope.unitTimePassed++;
+			$scope.setTimePassed();
+			if($scope.unitTimePass == 100){
+				$scope.loseGame();
+			}
+			
+			if($scope.timerOn){
+				$timeout(function(){
+					$scope.updateTime();
+				}, 100);
+			}
+		}
 		
 		$scope.checkCorrect = function(tempKey){
+			if($scope.timerOn == false){
+				$scope.timerOn = true;
+				$scope.updateTime();
+			}
+			
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
 				$scope.setTopScore($scope.score);
@@ -113,6 +146,7 @@ var btModule = angular.module('app', []).
 					$scope.nextLevel();
 					$scope.currentIndex = 0;
 					$scope.score = 0;
+					$scope.timerOn = false;
 				}
 				else{
 					$scope.bChars[$scope.currentIndex].success = true;
