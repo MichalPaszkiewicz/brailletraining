@@ -32,7 +32,7 @@ var btModule = angular.module('app', []).
 			{n: "z", i: [1,0,0,1,1,1]}
 		];
 		
-		function brailleChar(item){
+		function brailleChar(item, success){
 			this.one = item.i[0] == 1;
 			this.two = item.i[1] == 1;
 			this.three = item.i[2] == 1;
@@ -40,7 +40,7 @@ var btModule = angular.module('app', []).
 			this.five = item.i[4] == 1;
 			this.six = item.i[5] == 1;
 			this.name = item.n;
-			this.success = false;
+			this.success = success === true;
 			return this;
 		}
 		
@@ -60,8 +60,9 @@ var btModule = angular.module('app', []).
 		var generateBChars = function(){
 			for(var i = 0; i < $scope.levelCharNums(); i++){
 				var tempBChar = new brailleChar(bCharTable[i]);
+				var tempXChar = new brailleChar(bCharTable[i], true);
 				$scope.bChars.push(tempBChar);
-				$scope.xChars.push(tempBChar);
+				$scope.xChars.push(tempXChar);
 			}
 		}
 		
