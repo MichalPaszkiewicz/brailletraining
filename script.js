@@ -3,6 +3,10 @@ var btModule = angular.module('app', []).
 		$scope.xChars = [];
 		$scope.bChars = [];
 		
+		$scope.getHeight = function(){
+			return document.getElementById('x-holder').clientHeight;
+		}
+		
 		var bCharTable = [
 			{n: "a", i: [1]},
 			{n: "b", i: [1,0,1]},
