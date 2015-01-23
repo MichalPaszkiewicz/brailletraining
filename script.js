@@ -103,6 +103,8 @@ var btModule = angular.module('app', []).
 		
 		$scope.score = 0;
 		
+		$scope.timePassed = 0;
+		
 		$scope.checkCorrect = function(tempKey){
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score++;
