@@ -28,11 +28,11 @@ html, body{
 }
 
 footer, #footer-push{
-	height: 60px;
+	height: 70px;
 }
 
 footer{
-	margin-top: -60px;
+	margin-top: -70px;
 }
 
 .b-char{
