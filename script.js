@@ -89,6 +89,8 @@ var btModule = angular.module('app', []).
 				
 				if($scope.score == 10){
 					$scope.nextLevel();
+					$scope.currentIndex = 0;
+					$scope.score = 0;
 				}
 				
 				$scope.bChars[$scope.currentIndex].success = true;
