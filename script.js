@@ -49,18 +49,39 @@ var btModule = angular.module('app', []).
 		}
 		
 		$scope.level = localStorage.getItem("brailletraining-level") == null ? 1 : localStorage.getItem("brailletraining-level");
+		$scope.letterShow = true;
 		
 		$scope.levelCharNums = function(){
 			switch(parseInt($scope.level)){
 				case 1:
+					$scope.letterShow = true;
 					return 5;
 				case 2:
-					return 10;
+					$scope.letterShow = false;
+					return 5;
 				case 3:
+					$scope.letterShow = true;
+					return 10;
+				case 4: 
+					$scope.letterShow = false;
+					return 10;
+				case 5:
+					$scope.letterShow = true;
 					return 15;
-				case 4:
+				case 6:
+					$scope.letterShow = false;
+					return 15;
+				case 7:
+					$scope.letterShow = true;
 					return 20;
+				case 8:
+					$scope.letterShow = false;
+					return 20;
+				case 9:
+					$scope.letterShow = true;
+					return bCharTable.length;
 				default:
+					$scope.letterShow = false;
 					return bCharTable.length;
 			}
 		}
@@ -153,7 +174,7 @@ var btModule = angular.module('app', []).
 				$scope.setTopScore($scope.score);
 				$scope.unitTimePassed = 0;
 				$scope.setTimePassed();
-				if($scope.level < 5 && $scope.score >= 30 * $scope.level){
+				if($scope.level < 10 && $scope.score >= 30 * $scope.level){
 					$scope.nextLevel();
 					$scope.currentIndex = 0;
 					$scope.score = 0;
