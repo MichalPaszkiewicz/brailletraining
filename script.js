@@ -53,8 +53,12 @@ var btModule = angular.module('app', []).
 		$scope.levelCharNums = function(){
 			switch(parseInt($scope.level)){
 				case 1:
-					return 10;
+					return 5;
 				case 2:
+					return 10;
+				case 3:
+					return 15;
+				case 4:
 					return 20;
 				default:
 					return bCharTable.length;
@@ -87,7 +91,7 @@ var btModule = angular.module('app', []).
 			$scope.level++;
 			localStorage.setItem("brailletraining-level", $scope.level);
 			generateBChars();
-			$scope.timeAllowed = 500;
+			$scope.timeAllowed = 400;
 		}
 		
 		$scope.topScore = localStorage.getItem("brailletraining-topscore") == null ? 0 : localStorage.getItem("brailletraining-topscore");
@@ -107,7 +111,7 @@ var btModule = angular.module('app', []).
 		$scope.timePassed = 0;
 		$scope.unitTimePassed = 0;
 		
-		$scope.timeAllowed = 500;
+		$scope.timeAllowed = 400;
 		$scope.timerOn = false;
 		
 		$scope.setTimePassed = function(){
@@ -120,7 +124,7 @@ var btModule = angular.module('app', []).
 			$scope.score = 0;
 			generateBChars();
 			$scope.unitTimePassed = 0;
-			$scope.timeAllowed = 500;
+			$scope.timeAllowed = 400;
 		}
 		
 		$scope.updateTime = function(){
@@ -145,11 +149,11 @@ var btModule = angular.module('app', []).
 			
 			if($scope.bChars[$scope.currentIndex].name == tempKey){
 				$scope.score += parseInt($scope.level);
-				$scope.timeAllowed -= 4;
+				$scope.timeAllowed -= 8;
 				$scope.setTopScore($scope.score);
 				$scope.unitTimePassed = 0;
 				$scope.setTimePassed();
-				if($scope.level < 3 && $scope.score >= 100 * $scope.level){
+				if($scope.level < 5 && $scope.score >= 30 * $scope.level){
 					$scope.nextLevel();
 					$scope.currentIndex = 0;
 					$scope.score = 0;
