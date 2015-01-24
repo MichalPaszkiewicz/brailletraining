@@ -44,7 +44,6 @@ footer{
 .b-char{
 	display:inline-block;
 	width: 40px;
-	height: 80px;
 	margin: 10px;
 	box-shadow: 0 0 4px rgb(244, 244, 244);
 	position: relative;
@@ -72,7 +71,7 @@ p{
 }
 
 .b-char-cover{
-	height: 80px;
+	height: 100%;
 	width: 40px;
 	position: absolute;
 }
