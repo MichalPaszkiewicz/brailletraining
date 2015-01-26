@@ -108,11 +108,26 @@ var btModule = angular.module('app', []).
 		
 		$scope.currentIndex = 0;
 		
+		$scope.lockGame = false;
+		$scope.winOpen = false;
+		$scope.loseOpen = false;
+		$scope.optionsOpen = false;
+		
+		$scope.closeInfo = function(){
+			$scope.lockGame = false;
+			$scope.winOpen = false;
+			$scope.loseOpen = false;
+			$scope.optionsOpen = false;
+		}
+		
 		$scope.nextLevel = function(){
 			$scope.level++;
 			localStorage.setItem("brailletraining-level", $scope.level);
 			generateBChars();
 			$scope.timeAllowed = 400;
+			
+			$scope.winOpen = true;
+			$scope.lockGame = true;
 		}
 		
 		$scope.topScore = localStorage.getItem("brailletraining-topscore") == null ? 0 : localStorage.getItem("brailletraining-topscore");
@@ -146,6 +161,9 @@ var btModule = angular.module('app', []).
 			generateBChars();
 			$scope.unitTimePassed = 0;
 			$scope.timeAllowed = 400;
+			
+			$scope.loseOpen = true;
+			$scope.lockGame = true;
 		}
 		
 		$scope.updateTime = function(){
