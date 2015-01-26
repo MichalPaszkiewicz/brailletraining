@@ -31,6 +31,7 @@ html, body{
 	max-width: 630px;
 	margin: auto;
 	min-height: 100%;
+	position: relative;
 }
 
 footer, #footer-push{
@@ -117,4 +118,15 @@ p{
 
 #x-holder .b-char{
 	cursor: pointer;
+}
+
+.info-page, .options{
+	z-index: 110;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.options{
+	z-index: 120;
 }
