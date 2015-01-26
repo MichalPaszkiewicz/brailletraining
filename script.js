@@ -109,11 +109,13 @@ var btModule = angular.module('app', []).
 		$scope.currentIndex = 0;
 		
 		$scope.lockGame = false;
+		$scope.startOpen = true;
 		$scope.winOpen = false;
 		$scope.loseOpen = false;
 		$scope.optionsOpen = false;
 		
 		$scope.closeInfo = function(){
+			$scope.startOpen = false;
 			$scope.lockGame = false;
 			$scope.winOpen = false;
 			$scope.loseOpen = false;
