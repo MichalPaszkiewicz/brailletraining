@@ -34,11 +34,11 @@ html, body{
 }
 
 footer, #footer-push{
-	height: 70px;
+	height: 100px;
 }
 
 footer{
-	margin-top: -70px;
+	margin-top: -100px;
 }
 
 .b-char{
