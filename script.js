@@ -120,6 +120,13 @@ var btModule = angular.module('app', []).
 			$scope.optionsOpen = false;
 		}
 		
+		$scope.reset = function(){
+			$scope.level = 0;
+			localStorage.setItem("brailletraining-level", 0);
+			$scope.score = 0;
+			localStorage.setItem("brailletraining-score", 0);
+		}
+		
 		$scope.nextLevel = function(){
 			$scope.level++;
 			localStorage.setItem("brailletraining-level", $scope.level);
