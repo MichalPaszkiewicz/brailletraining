@@ -139,8 +139,6 @@ p{
 	margin: 10px;
 	padding: 10px;
 	background: rgb(201, 220, 248);
-	display:inline-block;
-	min-width: 100px;
 	border-radius: 10px;
 	box-shadow: 0 0 3px 1px;
 }
