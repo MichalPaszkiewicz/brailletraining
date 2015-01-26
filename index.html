@@ -38,6 +38,11 @@
 			<img style="position: absolute; top: 0; right: 0; border: 0; z-index: 50;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png">
 		</a>
 		<div id="main-container">
+			<div class=".info-page" ng-show="startOpen">
+				<p>Welcome!</p>
+				<div class="button" ng-click="closeInfo();">Start level {{level}}</div>
+				<div class="button" ng-click="optionsOpen = true;">Options</div>
+			</div>
 			<div class=".info-page" ng-show="winOpen">
 				<p>Congratulations! You have completed the level!</p>
 				<div class="button" ng-click="closeInfo();">Start level {{level}}</div>
@@ -45,10 +50,12 @@
 			</div>
 			<div class="options" ng-show="optionsOpen">
 				<div class="button" ng-click="optionsOpen = false;">Ok</div>
+				<div class="button" ng-click="reset();">Reset Game</div>
 			</div>
 			<div class=".info-page" ng-show="loseOpen">
 				<p>You have lost the game.</p>
 				<div class="button" ng-click="closeInfo();">Retry</div>
+				<div class="button" ng-click="optionsOpen = true;">Options</div>
 			</div>
 		
 			<div style="position:fixed" id="x-holder">
