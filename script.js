@@ -129,7 +129,7 @@ var btModule = angular.module('app', []).
 				$scope.score = 1;
 				localStorage.setItem("brailletraining-score", 1);
 			}
-			$scope.closeInfo();
+			$scope.optionsOpen = false;
 		}
 		
 		$scope.nextLevel = function(){
