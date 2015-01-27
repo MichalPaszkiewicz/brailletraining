@@ -124,10 +124,10 @@ var btModule = angular.module('app', []).
 		
 		$scope.reset = function(){
 			if(confirm("Are you sure you want to reset the score and the level to 0?")){
-				$scope.level = 0;
-				localStorage.setItem("brailletraining-level", 0);
-				$scope.score = 0;
-				localStorage.setItem("brailletraining-score", 0);
+				$scope.level = 1;
+				localStorage.setItem("brailletraining-level", 1);
+				$scope.score = 1;
+				localStorage.setItem("brailletraining-score", 1);
 			}
 		}
 		
