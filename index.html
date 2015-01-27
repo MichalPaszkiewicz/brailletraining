@@ -92,8 +92,8 @@
 			<div style="background: rgb(217, 241, 189); height: 20px; width: 100%;" id="health-left"><div style="background: red; height: 100%; float: right;" ng-style="{'width': timePassed}"></div></div>
 			<div id="footer-push" ng-show="startOpen || winOpen || loseOpen || optionsOpen"></div>	
 		</div>
-		<footer>
-			<div style="margin: auto; position: relative; z-index: 130; max-width: 600px;" ng-show="startOpen || winOpen || loseOpen || optionsOpen">
+		<footer ng-show="startOpen || winOpen || loseOpen || optionsOpen">
+			<div style="margin: auto; position: relative; z-index: 130; max-width: 600px;">
 				<div style="display:inline-block; margin-bottom: 10px;">
 					<p>Developed by <a href="../">Michal Paszkiewicz</a> </p>
 				</div>
