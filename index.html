@@ -40,6 +40,7 @@
 		<div id="main-container">
 			<div class="info-page" ng-show="startOpen || winOpen">
 				<div ng-show="startOpen">
+					<p></p>
 					<h1>Braille Trainer</h1>
 					<p>Welcome to Braille Trainer!</p>
 					<p>Learn to read braille visually by playing this game.</p>
@@ -53,12 +54,14 @@
 				<div class="button" ng-click="optionsOpen = true;">Options</div>
 			</div>
 			<div class="options" ng-show="optionsOpen">
+				<p></p>
 				<h1>Braille Trainer</h1>
 				<p>Options</p>
 				<div class="button" ng-click="reset();">Reset Game</div>
 				<div class="button" ng-click="optionsOpen = false;">Back</div>
 			</div>
 			<div class="info-page" ng-show="loseOpen">
+				<p></p>
 				<h1>Braille Trainer</h1>
 				<p>You have lost the game.</p>
 				<div class="button" ng-click="closeInfo();">Retry</div>
