@@ -136,7 +136,7 @@ var btModule = angular.module('app', []).
 			$scope.level++;
 			localStorage.setItem("brailletraining-level", $scope.level);
 			generateBChars();
-			$scope.timeAllowed = 400;
+			$scope.timeAllowed = 400 - ($scope.level * 4);
 			
 			$scope.winOpen = true;
 			$scope.lockGame = true;
@@ -159,7 +159,7 @@ var btModule = angular.module('app', []).
 		$scope.timePassed = 0;
 		$scope.unitTimePassed = 0;
 		
-		$scope.timeAllowed = 400;
+		$scope.timeAllowed = 400 - ($scope.level * 4);
 		$scope.timerOn = false;
 		
 		$scope.setTimePassed = function(){
@@ -172,7 +172,7 @@ var btModule = angular.module('app', []).
 			$scope.score = 0;
 			generateBChars();
 			$scope.unitTimePassed = 0;
-			$scope.timeAllowed = 400;
+			$scope.timeAllowed = 400 - ($scope.level * 4);
 			
 			$scope.loseOpen = true;
 			$scope.lockGame = true;
